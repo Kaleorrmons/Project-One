@@ -70,7 +70,8 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)![image](https://user-images.githubusercontent.com/90272545/155060676-63882bb2-7d14-478e-97fe-8cf806ee24ac.png)
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -82,17 +83,20 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-### Using the Playbook
+### Using the Playbook![Uploading image.png…]()
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
+- The filebeat-config.yml is the playbook. You can copy it from: curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > filebeat-config.yml
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- The file that you update is the 'hosts' file to make ansible run the playbook. You nano into 'hosts' and desgniate which server (webserver or elk) that you want and list their ip address and python. 
 - _Which URL do you navigate to in order to check that the ELK server is running?
+- the url that you navigate to in order to check that the ELK server is running is: http://[your.VM.IP]:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
